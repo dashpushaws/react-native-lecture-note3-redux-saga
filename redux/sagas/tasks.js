@@ -41,15 +41,20 @@ function* removeTasks(action){
 
 function* tasksSaga() {
   
-  // 액션이 발생했을 때, 제네레이터함수로 처리
+  
 
   // takeEvery: 해당 액션이 발생할 때마다 모두 처리
 
-  // dispatch({type:"ADD_TASK", payload:item}) // 액션 -> 사가 -> 리듀서
   
 
   // yield takeEvery("액션타입", 처리할 제네레이터함수)
-  yield takeEvery("ADD_TASK", addTask)
+  // 액션이 발생했을 때, 제네레이터함수로 처리
+  yield takeEvery("ADD_TASK", addTask) // ADD_TASK 액션이 발생하면, addTask로 처리
+
+  // dispatch({type:"ADD_TASK", payload:item}) 액션 -> 리듀서 였는데
+  // 액션 -> 사가 -> 리듀서
+
+
 
   // takeLatest: 해당 액션이 발생할 때 가장 나중에 호출할 액션처리
   //              이전의 액션은 취소가 됨. 여러번 버튼을 연속적으로 누를때

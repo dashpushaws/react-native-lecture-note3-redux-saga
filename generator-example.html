@@ -1,0 +1,57 @@
+<html>
+  <body>
+    <script>
+      // 순차적으로 실행되어야 되는 로직을 짤 수 있다 
+      // ex비동기적인 함수 a, b, c를 제네레이터를 이용하여 a->b->c로 순차적으로 작동되도록할수있다
+      // 순차적으로 실행된 로직을 gen()함수에 넣어놓고, 원하는 시점에 yield 돼있는 것을
+      // next로 호출하여 사용
+      // function*
+      function* gen() {
+        yield 1;  // 위에서부터 순차적으로 진행됨
+        yield 2;
+        yield 3;
+        yield call();  //1. yield는 call()의 리턴값을 value로 산출시켜준다
+        // yield 호출할 함수
+      }
+      
+      function call () {
+        return 1;
+      }
+
+      var g = gen(); // "Generator { }"
+
+
+      console.log(g.next()) // {done:false, value:"1"}
+      console.log(g.next()) // {done:false, value:"2"}
+      console.log(g.next()) // {done:false, value:"3"}
+      console.log(g.next()) // {done:false, value:"1"} // 2. 여기 value
+      console.log(g.next()) // {done:true, value:"undefined"} // 
+
+
+      function* gen() {
+        yield callA();  // .next() 호출할 때마다 처리할 task
+        yield callB();
+        yield callC();
+      }
+
+      g.next(); // callA()
+      //...
+      //....
+      axios.get().then(()=>{
+        g.next(); // callB()
+      }).error(()=>{
+        g.next(); // callB()
+      })
+
+      g.next();
+
+
+      
+
+
+
+
+
+    </script>
+  </body>
+</html>
