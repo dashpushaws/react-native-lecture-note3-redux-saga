@@ -1,0 +1,12 @@
+{
+  "name": "react-native-lecture-note3-redux-saga",
+  "displayName": "react-native-lecture-note3-redux-saga",
+  "expo": {
+    "name": "react-native-lecture-note3-redux-saga",
+    "slug": "react-native-lecture-note3-redux-saga",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
