@@ -15,6 +15,7 @@ const tasks = (state = [], action) => {
   // action의 type별로 state 제어
   switch (action.type) {
     case 'ADD_TASK_SUCCEEDED':
+      console.log('***action***', action)
       // return 변경할state
       // 현재 state를 복사하여 변경
       return [
@@ -32,6 +33,8 @@ const tasks = (state = [], action) => {
       ]
       
     case 'FETCH_TASKS_SUCCEEDED':
+  console.log('reducer', action)
+
       return [
         ...action.payload
       ]

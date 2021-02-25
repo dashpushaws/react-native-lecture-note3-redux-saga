@@ -38,7 +38,7 @@ const Details = ( { route, navigation }) => {
 
   const getDetails = useCallback(async () => {
     const result = await api.get(id);
-    console.log(result.data);
+    console.log('**************', result.data);
     setItem(result.data);
     // setTimeout(()=>{
     //   setItem(result.data);

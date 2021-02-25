@@ -1,4 +1,5 @@
 // ActionCreator
+// action1
 export const addTask = payload => (
   // Action -> Design pattern: Command Pattern
   {
@@ -6,7 +7,7 @@ export const addTask = payload => (
     payload
   }
 )
-
+// action2
 export const removeTask = payload => ({
   type: 'REMOVE_TASK',
   payload
