@@ -50,41 +50,6 @@ const TaskStackScreen = () => {
   )
 }
 
-
-
-const screenOptions = ({ route }) => ({
-  tabBarIcon: ({ focused, color, size }) => {
-    let iconName;
-
-    switch(route.name){
-      // focus가 있으면 'home', 'home-outline'
-      case 'Home':
-        iconName = focused
-          ? 'home'
-          : 'home-outline';        
-        break;
-      case 'List':
-        iconName = focused
-          ? 'list'
-          : 'list-outline'; 
-        break;
-      case 'Tasks':
-        iconName = focused
-          ? 'checkmark'
-          : 'checkmark-outline'; 
-        break;       
-    }
-    
-    // You can return any component that you like here!
-    return <Ionicons name={iconName} size={size} color={color} />;
-  },
-})
-
-const tabBarOptions= {
-  activeTintColor: 'tomato',
-  inactiveTintColor: 'gray',
-}
-
 export default function Main() {
 
 
@@ -124,4 +89,37 @@ export default function Main() {
       </NavigationContainer>
     </SafeAreaProvider>
   );
+}
+
+const screenOptions = ({ route }) => ({
+  tabBarIcon: ({ focused, color, size }) => {
+    let iconName;
+
+    switch(route.name){
+      // focus가 있으면 'home', 'home-outline'
+      case 'Home':
+        iconName = focused
+          ? 'home'
+          : 'home-outline';        
+        break;
+      case 'List':
+        iconName = focused
+          ? 'list'
+          : 'list-outline'; 
+        break;
+      case 'Tasks':
+        iconName = focused
+          ? 'checkmark'
+          : 'checkmark-outline'; 
+        break;       
+    }
+    
+    // You can return any component that you like here!
+    return <Ionicons name={iconName} size={size} color={color} />;
+  },
+})
+
+const tabBarOptions= {
+  activeTintColor: 'tomato',
+  inactiveTintColor: 'gray',
 }
